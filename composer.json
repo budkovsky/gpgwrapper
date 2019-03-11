@@ -1,0 +1,15 @@
+{
+	"name" : "budkovsky/gpg-wrapper",
+	"authors" : [{
+			"name" : "Budkovsky"
+		}
+	],
+	"autoload" : {
+		"psr-4" : {
+			"Budkovsky\\GpgWrapper\\" : "src"
+		}
+	},
+	"require" : {
+		"ext-gnupg" : "^1.4"
+	}
+}
