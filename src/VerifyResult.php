@@ -23,7 +23,7 @@ class VerifyResult
      */
     protected $plaintext;
     
-    public function __construct(?SignatureInfoCollection $signatureInfoCollection = null, string $plaintext)
+    public function __construct(?SignatureInfoCollection $signatureInfoCollection = null, ?string $plaintext = null)
     {
         if ($signatureInfoCollection !== null) {
             $this->setSignatureInfoCollection($signatureInfoCollection);

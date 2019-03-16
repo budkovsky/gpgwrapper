@@ -11,6 +11,11 @@ namespace Budkovsky\GpgWrapper;
  */
 class SignatureInfoCollection extends \ArrayObject
 {
+    public function __construct(array $input = [], int $flags = 0 , string $iterator_class = "ArrayIterator")
+    {
+        
+    }
+
     /**
      * {@inheritDoc}
      */
@@ -34,6 +39,18 @@ class SignatureInfoCollection extends \ArrayObject
         }
         
         parent::offsetSet(null, $newval);
+    }
+    
+    public function setFromArray(array $input): self
+    {
+        foreach ($input as $item) {
+            $this->append($this->createItem($item));
+        }
+    }
+    
+    protected function createItem(array $signatureInfo): SignatureInfo
+    {
+        return new SignatureInfo($signatureInfo);
     }
 }
 
