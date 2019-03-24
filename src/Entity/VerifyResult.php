@@ -4,7 +4,9 @@
  * @copyright 2019
  */
 
-namespace Budkovsky\GpgWrapper;
+namespace Budkovsky\GpgWrapper\Entity;
+
+use Budkovsky\GpgWrapper\Collection\SignatureInfoCollection;
 
 /**
  * GnuPG verify action's results container

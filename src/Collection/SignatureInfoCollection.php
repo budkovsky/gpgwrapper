@@ -4,9 +4,10 @@
  * @copyright 2019
  */
 
-namespace Budkovsky\GpgWrapper;
+namespace Budkovsky\GpgWrapper\Collection;
 
 use Budkovsky\Aid\Collection;
+use Budkovsky\GpgWrapper\Entity\SignatureInfo;
 
 /**
  * Collection of SignatureInfo objects

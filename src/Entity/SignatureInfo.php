@@ -1,11 +1,8 @@
 <?php
-/**
- * @author Budkovsky
- * @copyright 2019
- */
+
 declare(strict_types=1);
 
-namespace Budkovsky\GpgWrapper;
+namespace Budkovsky\GpgWrapper\Entity;
 
 /**
  * GnuPG signature info container
