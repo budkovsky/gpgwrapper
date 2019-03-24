@@ -6,3 +6,6 @@ composer.phar
 /.buildpath
 /.settings/
 /.project
+
+# phpunit
+/.phpunit.result.cache
