@@ -1,10 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Bank\IngBelgium\System;
+namespace Budkovsky\GpgWrapper\Example;
 
 use Budkovsky\GpgWrapper\GpgWrapper;
-use Budkovsky\GpgWrapper\Example\ServiceException;
 use Budkovsky\GpgWrapper\GpgEnum;
 use Budkovsky\GpgWrapper\Collection\SignatureInfoCollection;
 use Budkovsky\GpgWrapper\Entity\ImportResult;
@@ -182,7 +181,7 @@ class Service
         if ($signatureInfo === null) {
             return false;
         }
-        if ($signatureInfo !== $this->partnerPublicKeyFingerprint) {
+        if ($signatureInfo->getFingerprint() != $this->partnerPublicKeyFingerprint) {
             return false;
         }
         
