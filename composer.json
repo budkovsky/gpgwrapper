@@ -1,27 +1,28 @@
 {
-	"name" : "budkovsky/gpg-wrapper",
-	"authors" : [{
-			"name" : "Budkovsky"
+	"name": "budkovsky/gpg-wrapper",
+	"authors": [
+		{
+			"name": "Budkovsky"
 		}
 	],
-	"autoload" : {
-		"psr-4" : {
+	"autoload": {
+		"psr-4": {
 			"Budkovsky\\GpgWrapper\\" : "src"
 		}
 	},
-	"require" : {
+	"require": {
 		"php": "^7.2",
-		"ext-gnupg" : "^1.4",
+		"ext-gnupg": "^1.4",
 		"budkovsky/aid": "dev-master"
 	},
-	"require-dev" : {
-		"phpunit/phpunit" : "^8.0"
+	"require-dev": {
+		"phpunit/phpunit": "^8.0"
 	},
-	"repositories" : [
+	"repositories": [
 		{
-			"type" : "git",
-			"url" : "https://Budkovsky@github.com/budkovsky/aid",
-			"name" : "budkovsky/aid"
+			"type": "git",
+			"url": "https://Budkovsky@github.com/budkovsky/aid",
+			"name": "budkovsky/aid"
 		}
 	]
 }
