@@ -10,13 +10,15 @@
 		}
 	},
 	"require" : {
+		"php": "^7.2",
 		"ext-gnupg" : "^1.4",
 		"budkovsky/aid": "dev-master"
 	},
 	"require-dev" : {
 		"phpunit/phpunit" : "^8.0"
 	},
-	"repositories" : [{
+	"repositories" : [
+		{
 			"type" : "git",
 			"url" : "https://github.com/budkovsky/aid",
 			"name" : "budkovsky/aid"

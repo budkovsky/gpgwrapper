@@ -1,19 +1,28 @@
 <?php
-/**
- * @author Budkovsky
- * @copyright 2019
- */
+declare(strict_types=1);
 
 namespace Budkovsky\GpgWrapper\Collection;
 
-use Budkovsky\Aid\Collection;
+use Budkovsky\Aid\CollectionTrait;
 use Budkovsky\GpgWrapper\Entity\SignatureInfo;
 
 /**
  * Collection of SignatureInfo objects
  */
-class SignatureInfoCollection extends Collection
+class SignatureInfoCollection implements \IteratorAggregate, \Countable
 {
-    protected $itemType = SignatureInfo::class;   
+    use CollectionTrait;
+    
+    /**
+     * Adds item to the collection
+     * @param SignatureInfo $signatureInfo
+     * @return SignatureInfoCollection
+     */
+    public function add(SignatureInfo $signatureInfo): SignatureInfoCollection
+    {
+        $this->collection[] = $signatureInfo;
+        
+        return $this;
+    }
 }
 

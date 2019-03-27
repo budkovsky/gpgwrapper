@@ -1,5 +1,4 @@
 <?php
-
 declare(strict_types=1);
 
 namespace Budkovsky\GpgWrapper\Entity;
@@ -17,6 +16,8 @@ class SignatureInfo
     protected $fingerprint;
     
     /**
+     * GPG singature verify validity
+     * @see http://git.gnupg.org/cgi-bin/gitweb.cgi?p=gpgme.git;a=blob;f=src/gpgme.h.in;h=6cea2c777e2e763f063ad88e7b2135d21ba4bd4a;hb=107bff70edb611309f627058dd4777a5da084b1a#l360
      * @var int
      */
     protected $validity;
@@ -27,15 +28,19 @@ class SignatureInfo
     protected $timestamp;
     
     /**
+     * GPG signature verify status
+     * @see http://git.gnupg.org/cgi-bin/gitweb.cgi?p=gpgme.git;a=blob;f=src/gpgme.h.in;h=6cea2c777e2e763f063ad88e7b2135d21ba4bd4a;hb=107bff70edb611309f627058dd4777a5da084b1a#l291
      * @var int
      */
     protected $status;
     
     /**
+     * GPG signature verify summary
+     * @see http://git.gnupg.org/cgi-bin/gitweb.cgi?p=gpgme.git;a=blob;f=src/gpgme.h.in;h=6cea2c777e2e763f063ad88e7b2135d21ba4bd4a;hb=107bff70edb611309f627058dd4777a5da084b1a#l1506
      * @var int
      */
     protected $summary;
-
+    
     /**
      * The constructor
      * @param array $signatureInfo signature info, a single record from array returned by gnupg_verify()
@@ -46,19 +51,19 @@ class SignatureInfo
         if ($signatureInfo === null) {
             return;
         }
-        if (isset($signatureInfo['fingerprint']) && is_string($signatureInfo['fingerprint'])) {
+        if (isset($signatureInfo['fingerprint'])) {
             $this->setFingerprint($signatureInfo['fingerprint']);
         }
-        if (isset($signatureInfo['validity']) && is_int($signatureInfo['validity'])) {
+        if (isset($signatureInfo['validity'])) {
             $this->setValidity($signatureInfo['validity']);
         }
-        if (isset($signatureInfo['timestamp']) && is_int($signatureInfo['timestamp'])) {
+        if (isset($signatureInfo['timestamp'])) {
             $this->setTimestamp($signatureInfo['timestamp']);
         }
-        if (isset($signatureInfo['status']) && is_int($signatureInfo['status'])) {
+        if (isset($signatureInfo['status'])) {
             $this->setStatus($signatureInfo['status']);
         }
-        if (isset($signatureInfo['summary']) && is_int($signatureInfo['summary'])) {
+        if (isset($signatureInfo['summary'])) {
             $this->setSummary($signatureInfo['summary']);
         }
     }

@@ -1,8 +1,5 @@
 <?php
-/**
- * @author Budkovsky
- * @copyright 2019
- */
+declare(strict_types=1);
 
 namespace Budkovsky\GpgWrapper\Entity;
 
@@ -25,6 +22,11 @@ class VerifyResult
      */
     protected $plaintext;
     
+    /**
+     * The constructor
+     * @param SignatureInfoCollection $signatureInfoCollection
+     * @param string $plainText
+     */
     public function __construct(?SignatureInfoCollection $signatureInfoCollection = null, ?string $plaintext = null)
     {
         if ($signatureInfoCollection !== null) {
@@ -38,7 +40,7 @@ class VerifyResult
     /**
      * @return SignatureInfoCollection
      */
-    public function getSignatureInfoCollection(): SignatureInfoCollection
+    public function getSignatureInfoCollection(): ?SignatureInfoCollection
     {
         return $this->signatureInfoCollection;
     }
@@ -57,7 +59,7 @@ class VerifyResult
     /**
      * @return string
      */
-    public function getPlaintext(): string
+    public function getPlaintext(): ?string
     {
         return $this->plaintext;
     }
