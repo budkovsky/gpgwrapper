@@ -205,7 +205,7 @@ class ImportResult
     /**
      * @return int
      */
-    public function getNewsignatures(): ?int
+    public function getNewSignatures(): ?int
     {
         return $this->newSignatures;
     }
@@ -214,7 +214,7 @@ class ImportResult
      * @param int $newSignatures
      * @return ImportResult
      */
-    public function setNewsignatures(int $newSignatures): ImportResult
+    public function setNewSignatures(int $newSignatures): ImportResult
     {
         $this->newSignatures = $newSignatures;
         return $this;
