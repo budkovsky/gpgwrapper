@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="name-of-project" default="full-build">
  <!-- By default, we assume all tools to be on the $PATH -->
+ <property name="composer" value="composer"/>
  <property name="pdepend" value="pdepend"/>
  <property name="phpcpd" value="phpcpd"/>
  <property name="phpcs" value="phpcs"/>
@@ -27,13 +28,15 @@
  <property name="phpmd"   value="${basedir}/vendor/bin/phpmd"/>
  <property name="phpunit" value="${basedir}/vendor/bin/phpunit"/> -->
 
- <target name="full-build" depends="prepare,static-analysis,phpunit,phpdox,-check-failure" description="Performs static analysis, runs the tests, and generates project documentation"/>
+ <target name="full-build" depends="prepare,composer,static-analysis,phpunit,phpdox,-check-failure" description="Performs static analysis, runs the tests, and generates project documentation"/>
 
  <target name="full-build-parallel" depends="prepare,static-analysis-parallel,phpunit,phpdox,-check-failure" description="Performs static analysis (executing the tools in parallel), runs the tests, and generates project documentation"/>
 
  <target name="quick-build" depends="prepare,lint,phpunit-no-coverage" description="Performs a lint check and runs the tests (without generating code coverage reports)"/>
 
  <target name="static-analysis" depends="lint,phploc-ci,pdepend,phpmd-ci,phpcs-ci,phpcpd-ci" description="Performs static analysis"/>
+
+
 
  <!-- Adjust the threadCount attribute's value to the number of CPUs -->
  <target name="static-analysis-parallel" description="Performs static analysis (executing the tools in parallel)">
@@ -66,6 +69,17 @@
   <mkdir dir="${basedir}/build/phpdox"/>
   <property name="prepare.done" value="true"/>
  </target>
+
+<target name="composer" description="Installing composer dependencies">
+ <exec executable="composer" failonerror="true">
+  <arg value="install" />
+  <arg value="--dev" />
+  <arg value="--prefer-dist" />
+  <arg value="--no-progress" />
+
+  <env key="SYMFONY_ENV" value="test"/>
+ </exec>
+</target>
 
  <target name="lint" unless="lint.done" description="Perform syntax check of sourcecode files">
   <apply executable="php" taskname="lint">
