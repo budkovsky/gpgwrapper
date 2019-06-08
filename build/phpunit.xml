@@ -17,12 +17,4 @@
     <log type="junit" target="build/logs/junit.xml" />
   </logging>
 
-  <filter>
-    <whitelist addUncoveredFilesFromWhitelist="true">
-      <directory suffix=".php">src</directory>
-      <exclude>
-        <file>src/bootstrap.php</file>
-      </exclude>
-    </whitelist>
-  </filter>
 </phpunit>
