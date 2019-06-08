@@ -2,9 +2,8 @@
 namespace tests;
 
 use PHPUnit\Framework\TestCase;
-use Budkovsky\GpgWrapper\SignatureInfoCollection;
-use Budkovsky\GpgWrapper\SignatureInfo;
-use Budkovsky\GpgWrapper\GpgException;
+use Budkovsky\GpgWrapper\Collection\SignatureInfoCollection;
+use Budkovsky\GpgWrapper\Entity\SignatureInfo;
 
 class SignatureInfoCollectionTest extends TestCase
 {
@@ -13,10 +12,10 @@ class SignatureInfoCollectionTest extends TestCase
         $this->assertInstanceOf(SignatureInfoCollection::class, new SignatureInfoCollection());
     }
 
-    public function testCanAppendItem(): void
+    public function testCanAddItem(): void
     {
         $collection = new SignatureInfoCollection();
-        $collection->append(new SignatureInfo());
+        $collection->add(new SignatureInfo());
         
         $this->assertGreaterThan(0, count($collection));
     }
@@ -26,28 +25,28 @@ class SignatureInfoCollectionTest extends TestCase
         $this->assertIsIterable(new SignatureInfoCollection());
     }
     
-    public function testCanAppendRejectInvalidItem(): void
+    public function testCanAddRejectInvalidItem(): void
     {
-        $this->expectException(GpgException::class);
+        $this->expectException(\TypeError::class);
         
         $collection = new SignatureInfoCollection();
-        $collection->append(new \stdClass());
+        $collection->add(new \stdClass());
     }
     
-    public function testCanOffsetsetRejectIndex(): void
+    public function testCanSetRejectIndex(): void
     {
-        $this->expectException(GpgException::class);
+        $this->expectException(\TypeError::class);
         
         $collection = new SignatureInfoCollection();
-        $collection->offsetSet(0, new SignatureInfo());
+        $collection->set(0, new SignatureInfo());
     }
     
-    public function testCanOffsetsetRejectInvalidItem(): void
+    public function testCanSetRejectInvalidItem(): void
     {
-        $this->expectException(GpgException::class);
+        $this->expectException(\TypeError::class);
         
         $collection = new SignatureInfoCollection();
-        $collection->offsetSet(null, new \stdClass());
+        $collection->set(null, new \stdClass());
     }
 }
 

@@ -2,7 +2,7 @@
 namespace tests;
 
 use PHPUnit\Framework\TestCase;
-use Budkovsky\GpgWrapper\SignatureInfo;
+use Budkovsky\GpgWrapper\Entity\SignatureInfo;
 
 class SignatureInfoTest extends TestCase
 {
