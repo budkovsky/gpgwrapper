@@ -347,7 +347,7 @@ class GpgWrapper
      * Data structure returned by gnupu_verify():
      * @see https://stackoverflow.com/questions/32787007/what-do-returned-values-of-php-gnupg-signature-verification-mean
      * @param string $signedText
-     * @return VerifyResult 
+     * @return VerifyResult
      * Returns signature info collection and plain text packed into VerifyResult object or NULL on failure
      */
     public function verify(string $signedText): ?VerifyResult
