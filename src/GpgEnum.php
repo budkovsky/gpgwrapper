@@ -8,11 +8,11 @@ namespace Budkovsky\GpgWrapper;
  * @see http://git.gnupg.org/cgi-bin/gitweb.cgi?p=gpgme.git;a=blob;f=src/gpgme.h.in;h=6cea2c777e2e763f063ad88e7b2135d21ba4bd4a;hb=107bff70edb611309f627058dd4777a5da084b1a
  */
 class GpgEnum
-{    
+{
     /**
      * Minimum length length of valid fingerprint
      * TODO confirm fingerprint minimum length
-     * @var int 
+     * @var int
      */
     const FINGERPRINT_MINIMUM_LENGTH = 16;
 
@@ -47,7 +47,7 @@ class GpgEnum
      * @see https://www.php.net/manual/en/function.gnupg-verify.php
      * @see https://www.php.net/manual/en/function.gnupg-decryptverify.php
      * @see http://git.gnupg.org/cgi-bin/gitweb.cgi?p=gpgme.git;a=blob;f=src/gpgme.h.in;h=6cea2c777e2e763f063ad88e7b2135d21ba4bd4a;hb=107bff70edb611309f627058dd4777a5da084b1a#l1506
-     */ 
+     */
     const SIGSUM_VALID = 0x0001; //1
     const SIGSUM_GREEN = 0x0002; //2
     const SIGSUM_RED = 0x0004; //4
@@ -62,7 +62,7 @@ class GpgEnum
     
     /**
      * Signature's summary messages
-     */ 
+     */
     const SIGSUM_MESSAGE = [
         self::SIGSUM_VALID => 'The signature is fully valid',
         self::SIGSUM_GREEN => 'The signature is good',

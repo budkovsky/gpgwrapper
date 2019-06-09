@@ -174,5 +174,4 @@ class Uid
         
         return $this;
     }
-
 }

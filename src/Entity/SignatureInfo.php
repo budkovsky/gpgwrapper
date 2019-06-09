@@ -162,5 +162,4 @@ class SignatureInfo
         
         return $this;
     }
-
 }

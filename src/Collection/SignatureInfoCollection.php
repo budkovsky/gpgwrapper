@@ -25,4 +25,3 @@ class SignatureInfoCollection implements \IteratorAggregate, \Countable
         return $this;
     }
 }
-

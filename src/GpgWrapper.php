@@ -75,7 +75,7 @@ class GpgWrapper
      */
     public function addSignKey(string $fingerprint, string $passphrase = ''): self
     {
-        $success = gnupg_addsignkey($this->gpgResource , $fingerprint, $passphrase);
+        $success = gnupg_addsignkey($this->gpgResource, $fingerprint, $passphrase);
         if (!$success) {
             throw new GpgException('GPG: add sign key failure');
         }
@@ -100,7 +100,7 @@ class GpgWrapper
     }
     
     /**
-     * Removes encryption keys 
+     * Removes encryption keys
      * @see http://php.net/manual/en/function.gnupg-clearencryptkeys.php
      * @throws GpgException
      * @return self
@@ -151,9 +151,11 @@ class GpgWrapper
     /**
      * Decrypts and verifies a given text
      * @see http://php.net/manual/en/function.gnupg-decryptverify.php
-     * @see https://stackoverflow.com/questions/32787007/what-do-returned-values-of-php-gnupg-signature-verification-mean Data structure returned by gnupu_verify() 
+     * Data structure returned by gnupu_verify():
+     * @see https://stackoverflow.com/questions/32787007/what-do-returned-values-of-php-gnupg-signature-verification-mean
      * @param string $text
-     * @return VerifyResult Returns signature info collection and plain text packed into VerifyResult object or NULL on failure
+     * @return VerifyResult
+     * Returns signature info collection and plain text packed into VerifyResult object or NULL on failure
      */
     public function decryptVerify(string $text): ?VerifyResult
     {
@@ -223,7 +225,7 @@ class GpgWrapper
     {
         $result = gnupg_geterror($this->gpgResource);
         
-        return $result === false ? null : $result; 
+        return $result === false ? null : $result;
     }
     
     /**
@@ -342,9 +344,11 @@ class GpgWrapper
     /**
      * Verifies a signed text
      * @see http://www.php.net/manual/en/function.gnupg-verify.php
-     * @see https://stackoverflow.com/questions/32787007/what-do-returned-values-of-php-gnupg-signature-verification-mean Data structure returned by gnupu_verify() 
+     * Data structure returned by gnupu_verify():
+     * @see https://stackoverflow.com/questions/32787007/what-do-returned-values-of-php-gnupg-signature-verification-mean
      * @param string $signedText
-     * @return VerifyResult Returns signature info collection and plain text packed into VerifyResult object or NULL on failure
+     * @return VerifyResult 
+     * Returns signature info collection and plain text packed into VerifyResult object or NULL on failure
      */
     public function verify(string $signedText): ?VerifyResult
     {

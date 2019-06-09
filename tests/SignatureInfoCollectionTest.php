@@ -49,4 +49,3 @@ class SignatureInfoCollectionTest extends TestCase
         $collection->set(null, new \stdClass());
     }
 }
-

@@ -6,4 +6,3 @@ namespace Budkovsky\GpgWrapper\Example;
 class ServiceException extends \Exception
 {
 }
-

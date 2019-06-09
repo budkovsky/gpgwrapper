@@ -30,8 +30,7 @@ class SignatureInfoTest extends TestCase
         int $timestamp = 1552343579,
         int $status = 4,
         int $summary = 9
-    ): array
-    {
+    ): array {
         return [
             'fingerprint' => $fingerprint,
             'validity' => $validity,

@@ -215,8 +215,10 @@ class Service
      * @param SignatureInfoCollection $signatureInfoCollection
      * @param int $index
      */
-    protected function getSignatureFromCollection(SignatureInfoCollection $signatureInfoCollection, int $index = 0): ?SignatureInfo 
-    {
+    protected function getSignatureFromCollection(
+        SignatureInfoCollection $signatureInfoCollection,
+        int $index = 0
+    ): ?SignatureInfo {
         return $signatureInfoCollection[$index] ?? null;
     }
 }

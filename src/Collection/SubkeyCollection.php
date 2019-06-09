@@ -6,7 +6,6 @@ namespace Budkovsky\GpgWrapper\Collection;
 use Budkovsky\Aid\CollectionTrait;
 use Budkovsky\GpgWrapper\Entity\Subkey;
 
-
 /**
  * GPG keyinfo subkey collection
  */
@@ -15,7 +14,7 @@ class SubkeyCollection implements \IteratorAggregate, \Countable
     use CollectionTrait;
     
     /**
-     * @param Subkey $item 
+     * @param Subkey $item
      * @return SubkeyCollection
      */
     public function add(Subkey $item): SubkeyCollection
@@ -25,4 +24,3 @@ class SubkeyCollection implements \IteratorAggregate, \Countable
         return $this;
     }
 }
-
