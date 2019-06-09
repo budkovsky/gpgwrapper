@@ -162,7 +162,7 @@ class GpgWrapper
         $plaintext = null;
         $result = gnupg_decryptverify($this->gpgResource, $text, $plaintext);
         
-        return $result === false 
+        return $result === false
             ? null
             : new VerifyResult(new SignatureInfoCollection($result), $plaintext);
     }
