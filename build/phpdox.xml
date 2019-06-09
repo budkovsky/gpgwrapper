@@ -1,8 +1,8 @@
 <phpdox xmlns="http://xml.phpdox.net/config">
  <bootstrap>
-    <require>${basedir}/vendor.autoload.php</require>
+    <require>${basedir}/vendor/autoload.php</require>
  </bootstrap>
- <project name="name-of-project" source="${basedir}/src" workdir="build/phpdox">
+ <project name="name-of-project" source="${basedir}/../src" workdir="build/phpdox">
   <collector publiconly="false">
    <include mask="*.php" />
   </collector>
