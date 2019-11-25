@@ -11,12 +11,12 @@
 		}
 	},
 	"require": {
-		"php": "^7.2",
+		"php": "^7.1",
 		"ext-gnupg": "^1.4",
-		"budkovsky/aid": "dev-master"
+		"budkovsky/aid": "*"
 	},
 	"require-dev": {
-		"phpunit/phpunit": "^8.0"
+		"phpunit/phpunit": "^7"
 	},
 	"repositories": [
 		{

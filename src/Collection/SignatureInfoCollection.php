@@ -3,25 +3,25 @@ declare(strict_types=1);
 
 namespace Budkovsky\GpgWrapper\Collection;
 
-use Budkovsky\Aid\CollectionTrait;
 use Budkovsky\GpgWrapper\Entity\SignatureInfo;
+use Budkovsky\Aid\Abstraction\CollectionAbstract;
 
 /**
  * Collection of SignatureInfo objects
  */
-class SignatureInfoCollection implements \IteratorAggregate, \Countable
+class SignatureInfoCollection extends CollectionAbstract
 {
-    use CollectionTrait;
-    
     /**
      * Adds item to the collection
      * @param SignatureInfo $signatureInfo
      * @return SignatureInfoCollection
      */
-    public function add(SignatureInfo $signatureInfo): SignatureInfoCollection
+    public function add(?SignatureInfo $signatureInfo=null): SignatureInfoCollection
     {
-        $this->collection[] = $signatureInfo;
-        
+        if ($signatureInfo) {
+            $this->collection[] = $signatureInfo;
+        }
+
         return $this;
     }
 }

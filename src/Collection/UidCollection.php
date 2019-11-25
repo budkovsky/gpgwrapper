@@ -3,24 +3,25 @@ declare(strict_types=1);
 
 namespace Budkovsky\GpgWrapper\Collection;
 
-use Budkovsky\Aid\CollectionTrait;
+use Budkovsky\Aid\Abstraction\CollectionAbstract;
 use Budkovsky\GpgWrapper\Entity\Uid;
 
 /**
  * Keyinfo Uid collection
  */
-class UidCollection implements \IteratorAggregate, \Countable
+class UidCollection extends CollectionAbstract
 {
-    use CollectionTrait;
-    
+
     /**
      * @param Uid $uid
      * @return UidCollection
      */
-    public function add(Uid $uid): UidCollection
+    public function add(?Uid $uid=null): UidCollection
     {
-        $this->collection[] = $uid;
-        
+        if ($uid) {
+            $this->collection[] = $uid;
+        }
+
         return $this;
     }
 }
