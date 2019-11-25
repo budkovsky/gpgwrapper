@@ -9,3 +9,5 @@ composer.phar
 
 # phpunit
 /.phpunit.result.cache
+
+/build/logs/*
