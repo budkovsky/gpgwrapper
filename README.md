@@ -5,7 +5,7 @@ Wraps PHP functions from ext-gnupg extension to modern, PHP7-compatible objects 
 No results returned by reference, no "false" boolean return on failed, when expecting scalar / object values. 
 According to PHP7.1+ type-hinting rules, sometimes "null" can be returned instead.
 
-[&raquo; More about pure PHP Gnu extension(ext-gnupg)](https://www.php.net/manual/en/book.gnupg.php)
+[&raquo; More about pure PHP GnuPG functions(ext-gnupg)](https://www.php.net/manual/en/book.gnupg.php)
 
 ## Requirements
 * PHP 7.2+
