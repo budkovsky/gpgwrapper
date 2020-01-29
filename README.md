@@ -3,7 +3,7 @@
 PHP GnuPG object-oriented implementation. 
 Wraps PHP functions from ext-gnupg extension to modern, PHP7-compatible objects with full type-hinting. 
 No results returned by reference, no "false" boolean return on failed, when expecting scalar / object values. 
-According to PHP7 type-hinting implementation, sometimes "null" can be returned instead.
+According to PHP7.1+ type-hinting rules, sometimes "null" can be returned instead.
 
 ## Requirements
 * PHP 7.2+
